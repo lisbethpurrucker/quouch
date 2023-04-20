@@ -175,6 +175,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_154758) do
     t.string "city"
     t.string "invite_code"
     t.bigint "invited_by_id"
+    t.string "stripe_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
