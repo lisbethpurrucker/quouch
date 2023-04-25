@@ -46,7 +46,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :subscriptions, only: %i[new show create update]
+  resources :subscriptions, only: %i[new show create update] do
+    get :payment, on: :collection, defaults: { format: 'html' }
+  end
 
   mount ActionCable.server => '/cable'
 
