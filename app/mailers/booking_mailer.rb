@@ -31,7 +31,7 @@ class BookingMailer < ApplicationMailer
 	end
 
 	def booking_cancelled_by_guest_email
-		@url = booking_url(@booking)
+		@url = root_url
 		mail(to: @host.email, subject: "Your guest #{@guest.first_name.capitalize} cancelled the booking")
 	end
 
