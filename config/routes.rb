@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   end
 
   mount ActionCable.server => '/cable'
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
